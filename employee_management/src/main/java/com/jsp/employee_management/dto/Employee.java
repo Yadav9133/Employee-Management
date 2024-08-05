@@ -20,7 +20,6 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @Data
 @Component
-@AllArgsConstructor
 public class Employee {
 	
 	@Id
@@ -42,6 +41,25 @@ public class Employee {
 	List<Experience> exp;	
 	@OneToMany(cascade=CascadeType.ALL)
 	List<EductionalDetailes> detailes;
+	
+	public Employee(String firstName, String lastName, int age, String gender, long phn, String email, String pwd,
+			String dob, byte[] image, List<Experience> exp, List<EductionalDetailes> detailes) {
+		super();
+		this.firstName = firstName;
+		this.lastName = lastName;
+		this.age = age;
+		this.gender = gender;
+		this.phn = phn;
+		this.email = email;
+		this.pwd = pwd;
+		this.dob = dob;
+		this.image = image;
+		this.exp = exp;
+		this.detailes = detailes;
+	}
+	
+	
+	
 	
 	
 }
